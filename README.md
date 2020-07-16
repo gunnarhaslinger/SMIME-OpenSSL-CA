@@ -1,5 +1,5 @@
-# S/MIME Certificate Authority 
-## OpenSSL CA, Windows Batch-Scripts for CA & S/MIME Mail-Certificate-Generation
+# S/MIME Certificate Authority based on OpenSSL CA
+## CA, Windows Batch-Scripts for CA & S/MIME Mail-Certificate-Generation
 
 Full-Download: Use the provided ZIP-File, it includes OpenSSL and the Scripts.
 
