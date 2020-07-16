@@ -8,7 +8,7 @@ You don't need to have Linux installed, it runs on Windows and can be easily con
 
 Creating the CA ist just starting [`create_CA.bat`](create_CA.bat), creating an S/SMIME-Certificate is just another click on [`create_SMIME-Certificate-for-User.bat`](create_SMIME-Certificate-for-User.bat).
 
-You get fully working .p12 Files (.p12 = PKCS#12 = .pfx) to Import your S/MIME-Certificate into Certificate-Store with one click (CA already included).
+You get fully working .p12 Files (.p12 = PKCS#12 = .pfx) to Import your S/MIME-Certificate into Certificate-Store with one click (your self-generated CA already included).
 
 In addition you get a nice [User-Manual / Documentation](Manual%20(German)%20-%20SMIME-CA%20Nutzungsanleitung%20und%20technische%20Infos.pdf) with Screenshots (in German Language).
 
