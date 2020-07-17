@@ -29,3 +29,15 @@ Folder-Structure
 * Thunderbird seems to expect unique Root-CA Serial Numbers, strange effects happen if you just create a Root-CA with serial 0x01 and import two of them, so serial is random generated and even the S/MIME-Certificate SerialNumers have an random-start-prefix and then count up on each new cert issued.
 * When importing the P12 to Thunderbird: Be sure you select "This certificate can identify mail users", you find a Sceenshot of this mandatory step in my [documentation](Manual%20(German)%20-%20SMIME-CA%20Nutzungsanleitung%20und%20technische%20Infos.pdf) in Chapter 9.
 * Certificate Key Usage and Extended Key Usage are exactly tailored for S/MIME, but configuration example to add TLS-Client-Auth Usage is given in ´CA-openssl.cfg´ .
+
+---
+h2. Start a new CA
+* Extract downloaded ZIP-File
+* Start `create_CA.bat` do generate a new Root-CA located in new created Directory `CA`
+* Edit `create_SMIME-Certificate-for-User.bat` (Username, E-Mail-Address, ...) and Start it to create your first S/MIME-Certificate
+* Repeat editing and starting `create_SMIME-Certificate-for-User.bat` as often as you need a new certificate for a user
+* Backup and store the whole folder on a secure place
+
+h2. Updating from previous Versions
+* Extract downloaded ZIP-File of new Version
+* Copy ´CA´ Folder from old Version to new Version
