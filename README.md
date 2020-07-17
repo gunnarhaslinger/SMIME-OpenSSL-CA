@@ -46,5 +46,6 @@ Folder-Structure
 ---
 
 ## Credit & Kudos
+* The [OpenSSL Community](https://www.openssl.org/)
 * [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html) for providing Win64-compiled OpenSSL
 * My friend Werner for acting as Alpha/Beta-Test-User and reporting me all Thunderbird-Bugs he stumbled with.
