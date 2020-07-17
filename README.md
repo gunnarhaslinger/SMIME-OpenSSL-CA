@@ -32,19 +32,19 @@ Folder-Structure
 
 ---
 
-h2. Start a new CA
+## Start a new CA
 * Extract downloaded ZIP-File
 * Start `create_CA.bat` do generate a new Root-CA located in new created Directory `CA`
 * Edit `create_SMIME-Certificate-for-User.bat` (Username, E-Mail-Address, ...) and Start it to create your first S/MIME-Certificate
 * Repeat editing and starting `create_SMIME-Certificate-for-User.bat` as often as you need a new certificate for a user
 * Backup and store the whole folder on a secure place
 
-h2. Updating from previous Versions
+## Updating from previous Versions
 * Extract downloaded ZIP-File of new Version
 * Copy ´CA´ Folder from old Version to new Version
 
 ---
 
-h2. Credit & Kudos
+## Credit & Kudos
 * [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html) for providing Win64-compiled OpenSSL
 * My friend Werner for acting as Alpha/Beta-Test-User and reporting me all Thunderbird-Bugs he stumbled with.
