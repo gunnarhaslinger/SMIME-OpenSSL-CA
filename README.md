@@ -31,6 +31,7 @@ Folder-Structure
 * Certificate Key Usage and Extended Key Usage are exactly tailored for S/MIME, but configuration example to add TLS-Client-Auth Usage is given in ´CA-openssl.cfg´ .
 
 ---
+
 h2. Start a new CA
 * Extract downloaded ZIP-File
 * Start `create_CA.bat` do generate a new Root-CA located in new created Directory `CA`
@@ -41,3 +42,9 @@ h2. Start a new CA
 h2. Updating from previous Versions
 * Extract downloaded ZIP-File of new Version
 * Copy ´CA´ Folder from old Version to new Version
+
+---
+
+h2. Credit & Kudos
+* [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html) for providing Win64-compiled OpenSSL
+* My friend Werner for acting as Alpha/Beta-Test-User and reporting me all Thunderbird-Bugs he stumbled with.
