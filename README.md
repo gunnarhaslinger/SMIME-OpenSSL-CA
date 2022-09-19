@@ -1,7 +1,7 @@
 # S/MIME Certificate Authority based on OpenSSL CA
 ## CA, Windows Batch-Scripts for CA & S/MIME Mail-Certificate-Generation
 
-Full-Download: Use the provided [ZIP-File](../../raw/master/SMIME-CA.v2022-04-27.Full-Package-including-OpenSSL.zip), it includes OpenSSL v3.0.2 and the Scripts.
+Full-Download: Use the provided [ZIP-File](../../raw/master/SMIME-CA.v2022-09-19.Full-Package-including-OpenSSL.zip), it includes OpenSSL v3.0.5 and the Scripts.
 
 This little OpenSSL based CA creates smooth working S/MIME Certificates for signed and encrypted S/MIME Mailing with Mail-Clients like Thunderbird or Outlook. 
 You don't need to have Linux installed, it runs on Windows and can be easily configured for your needs, as it uses only small and readable Bat-Scripts.
