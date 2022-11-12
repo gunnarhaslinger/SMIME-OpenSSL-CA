@@ -29,7 +29,7 @@ Folder-Structure
 * Thunderbird seems to expect unique Root-CA Serial Numbers, strange effects happen if you just create a Root-CA with serial 0x01 and import two of them, so serial is random generated and even the S/MIME-Certificate SerialNumers have an random-start-prefix and then count up on each new cert issued.
 * When importing the P12 to Thunderbird: Be sure you select "This certificate can identify mail users", you find a Sceenshot of this mandatory step in my [documentation](Manual%20(German)%20-%20SMIME-CA%20Nutzungsanleitung%20und%20technische%20Infos.pdf) in Chapter 9.
 * Certificate Key Usage and Extended Key Usage are exactly tailored for S/MIME, but configuration example to add TLS-Client-Auth Usage is given in `CA-openssl.cfg` .
-* If you need a working P12 for iPhone with old legacy Encryption you can set LEGACY_P12=YES, reason for this see [#1](/../../issues/1)
+* If you need a working P12 for iPhone with old legacy Encryption you can set `LEGACY_P12=YES`, reason for this see [#1](/../../issues/1)
 
 ---
 
