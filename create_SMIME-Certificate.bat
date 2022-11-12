@@ -20,6 +20,11 @@ rem # The password for the P12-File, it protects the Users Certificate, User nee
 rem # Avoid special characters, only use alphanumeric passwords
 if "%PASSWORD%"=="" set PASSWORD=email-0815
 
+rem OpenSSL v3 creates P12 Files using modern PBES2, PBKDF2, AES-256-CBC, Iteration 2048, PRF hmacWithSHA256
+rem Some Legacy Devices like iPhones cannot handle this modern encryption but expect to get old pbeWithSHA1And40BitRC2-CBC
+rem If the P12 File should be created using pbeWithSHA1And40BitRC2-CBC (for compatibility with iPhone iOS) set LEGACY_P12=YES
+if "%LEGACY_P12%"=="" set LEGACY_P12=NO
+
 rem --- End of Configuration, no modification / configuration needed below ---
 
 rem # DIR = Folder of the CA
@@ -39,6 +44,10 @@ set COUNTRY=AT
 set STATE=Austria
 set LOCALITY=Europe
 
+rem See description about iPhone Compatibility above in section Configuration
+set LEGACY=
+if "%LEGACY_P12%"=="YES" set LEGACY=-legacy -provider-path ..\openssl
+
 rem Form the whole x509 SMIME-Certificate SUBJECT
 set SUBJECT=/emailAddress=%EMAIL%/C=%COUNTRY%/O=%ORG%/OU=%ORGUNIT%/CN=%USER%
 rem set SUBJECT=/emailAddress=%EMAIL%/C=%COUNTRY%/ST=%STATE%/L=%LOCALITY%/O=%ORG%/OU=%ORGUNIT%/CN=%USER%
@@ -46,6 +55,7 @@ rem set SUBJECT=/emailAddress=%EMAIL%/C=%COUNTRY%/ST=%STATE%/L=%LOCALITY%/O=%ORG
 set OPENSSL_CONF=..\CA-openssl.cfg
 set openssl=..\openssl\openssl.exe
 set RANDFILE=%TEMP%\openssl-random.rnd
+
 rem ########################################################
 
 rem CleanUp OpenSSL Random File
@@ -70,7 +80,7 @@ rem # Create Certificate by processing the CSR
 %openssl% ca -config "../CA-openssl.cfg" -batch -extensions %EXTENSIONS% -md sha256 -days 5478 -out "certs/%USER%.cer" -infiles "certs/%USER%.csr"
 
 rem # Create a .p12 Container (PKCS#11, PFX), Passwort-Protect the p12-File (Thunderbird needs it to be password-protected for importing it). Also add the CA-Certificate to the p12-File.
-%openssl% pkcs12 -export -in "certs/%USER%.cer" -inkey "certs/%USER%.key" -chain -CAfile "ca-cert.cer" -name "%USER%" -passout pass:%PASSWORD% -out "certs/%USER%.p12"
+%openssl% pkcs12 -export -in "certs/%USER%.cer" -inkey "certs/%USER%.key" -chain -CAfile "ca-cert.cer" -name "%USER%" -passout pass:%PASSWORD% -out "certs/%USER%.p12" %LEGACY%
 
 rem # Print the Certificate-details as Informational Output and store it in .infos.txt File (just for your interest)
 %openssl% x509 -in "certs/%USER%.cer" -noout -text
