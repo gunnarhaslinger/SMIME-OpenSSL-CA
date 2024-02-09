@@ -1,7 +1,7 @@
 # S/MIME Certificate Authority based on OpenSSL CA
 ## CA, Windows Batch-Scripts for CA & S/MIME Mail-Certificate-Generation
 
-Full-Download: Use the provided [ZIP-File](../../raw/master/SMIME-CA.v2023-10-24.Full-Package-including-OpenSSL-3.1.3.zip), it includes OpenSSL v3.1.3 and the Scripts.
+Full-Download: Use the provided [ZIP-File](../../raw/master/SMIME-CA.v2024-02-09.Full-Package-including-OpenSSL-3.2.1.zip), it includes OpenSSL v3.2.1 and the Scripts.
 
 This little OpenSSL based CA creates smooth working S/MIME Certificates for signed and encrypted S/MIME Mailing with Mail-Clients like Thunderbird or Outlook. 
 You don't need to have Linux installed, it runs on Windows and can be easily configured for your needs, as it uses only small and readable Bat-Scripts.
@@ -17,8 +17,7 @@ Folder-Structure
 * `CA-openssl.cfg` the preconfigured Config-File, usually no modification is needed
 * `Batch-Files` for Creating the CA and S/MIME Certs
 * `openssl` - contains the OpenSSL Windows Binaries:
-  * Win64 compiled OpenSSL Binaries: Win64 OpenSSL v3, compiled by [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html)
-  * Added vcruntime140.dll (so you don't need to have Visual C++ Redistributable Packages for Visual Studio 2017 installed)
+  * Win64 compiled OpenSSL Binaries: Win64 OpenSSL v3, compiled by [FireDaemon](https://www.firedaemon.com/download-firedaemon-openssl)
 
 ## Solved Pitfalls
 * OpenSSL included, VisualStudio-Runtime included, no Installation necessary - just extract zip-File
@@ -48,5 +47,5 @@ Folder-Structure
 
 ## Credit & Kudos
 * The [OpenSSL Community](https://www.openssl.org/)
-* [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html) for providing Win64-compiled OpenSSL
+* [FireDaemon](https://www.firedaemon.com/download-firedaemon-openssl) for providing Win64-compiled OpenSSL
 * My friend Werner for acting as Alpha/Beta-Test-User and reporting me all Thunderbird-Bugs he stumbled with.
